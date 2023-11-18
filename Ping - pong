@@ -42,7 +42,8 @@ racket1 = Player("Рисунок3.gif", 20, 200, 4, 50, 150)
 racket2 = Player("Рисунок3.gif", 725, 200, 4, 50, 150)
 ball = GameSprite("ball.gif", 375, 200, 4 ,50 ,50)
 
-
+speed_x = 3
+speed_y = 3
 
 while game:
     for e in event.get():
@@ -56,5 +57,7 @@ while game:
         racket1.reset()
         racket2.reset()
         ball.reset()
+        ball.rect.x += speed_x
+        ball.rect.y += speed_y
         display.update()
         clock.tick(FPS)
