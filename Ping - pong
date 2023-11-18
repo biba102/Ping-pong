@@ -38,11 +38,23 @@ finish = False
 clock = time.Clock()
 FPS = 60
 
+racket1 = Player("Рисунок3.gif", 20, 200, 4, 50, 150)
+racket2 = Player("Рисунок3.gif", 725, 200, 4, 50, 150)
+ball = GameSprite("ball.gif", 375, 200, 4 ,50 ,50)
+
+
+
 while game:
     for e in event.get():
         if e.type == QUIT:
             game = False
     if finish != True:
         window.fill(back)
+        racket1.update_1()
+        racket2.update_r()
+        ball.update()
+        racket1.reset()
+        racket2.reset()
+        ball.reset()
         display.update()
         clock.tick(FPS)
